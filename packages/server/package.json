@@ -1,13 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@tus/server",
+  "name": "@frank4up/server",
   "version": "1.0.0-beta.4",
   "description": "Tus resumable upload protocol in Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "homepage": "https://github.com/tus/tus-node-server#readme",
   "bugs": "https://github.com/tus/tus-node-server/issues",
-  "repository": "tus/tus-node-server",
+  "repository": "bekee/tus-node-server",
   "license": "MIT",
   "files": [
     "README.md",
