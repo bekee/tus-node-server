@@ -88,14 +88,17 @@ export const RequestValidator = {
   },
 
   isInvalidHeader(header_name: string, header_value: string | undefined): boolean {
+
+    const method = `_invalid${this.capitalizeHeader(header_name)}Header`
+    console.log("method", method)
+    console.log("header_name", header_name)
+
     // @ts-expect-error we can compare string literals
     if (!HEADERS_LOWERCASE.includes(header_name)) {
       return false
     }
 
-    const method = `_invalid${this.capitalizeHeader(header_name)}Header`
-    console.log("method", method)
-    console.log("header_name", header_name)
+    
 
     // const tr = this[method](header_value)
     // console.log("check_2", tr)
