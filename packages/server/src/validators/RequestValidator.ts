@@ -94,7 +94,8 @@ export const RequestValidator = {
     }
 
     const method = `_invalid${this.capitalizeHeader(header_name)}Header`
-    console.log("method", method, header_name)
+    console.log("method", method)
+    console.log("header_name", header_name)
 
     // const tr = this[method](header_value)
     // console.log("check_2", tr)
