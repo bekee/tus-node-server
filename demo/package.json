@@ -8,10 +8,10 @@
     "start:s3": "cross-env DATA_STORE=S3Store node server.js"
   },
   "dependencies": {
+    "@frank4up/server": "workspace:^",
     "@tus/file-store": "workspace:^",
     "@tus/gcs-store": "workspace:^",
     "@tus/s3-store": "workspace:^",
-    "@tus/server": "workspace:^",
     "tus-js-client": "^2.3.0"
   },
   "devDependencies": {

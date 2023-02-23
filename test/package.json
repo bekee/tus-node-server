@@ -6,10 +6,10 @@
     "test": "mocha e2e.test.ts --timeout 40000 --exit --extension ts --require ts-node/register"
   },
   "dependencies": {
+    "@frank4up/server": "workspace:^",
     "@tus/file-store": "workspace:^",
     "@tus/gcs-store": "workspace:^",
-    "@tus/s3-store": "workspace:^",
-    "@tus/server": "workspace:^"
+    "@tus/s3-store": "workspace:^"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.1",

@@ -26,7 +26,7 @@ npm install @tus/gcs-store
 ## Use
 
 ```js
-const {Server} = require('@tus/server')
+const {Server} = require('@frank4up/server')
 const {GCSStore} = require('@tus/gcs-store')
 
 const server = new Server({

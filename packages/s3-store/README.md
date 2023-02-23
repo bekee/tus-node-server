@@ -29,7 +29,7 @@ npm install @tus/s3-store
 ## Use
 
 ```js
-const {Server} = require('@tus/server')
+const {Server} = require('@frank4up/server')
 const {S3Store} = require('@tus/s3-store')
 
 const s3Store = new S3Store({
@@ -90,7 +90,7 @@ The `credentials` config is directly passed into the AWS SDK so you can refer to
 
 ```js
 const aws = require('aws-sdk')
-const {Server} = require('@tus/server')
+const {Server} = require('@frank4up/server')
 const {FileStore} = require('@tus/s3-store')
 
 const s3Store = new S3Store({
