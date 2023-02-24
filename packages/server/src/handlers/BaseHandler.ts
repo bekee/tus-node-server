@@ -39,11 +39,15 @@ export class BaseHandler extends EventEmitter {
     let proto
     let host
 
+    console.log("full_header", req.headers) 
+    console.log("forwardedppp", forwarded) 
     console.log("base_url_1", baseUrl)
+    console.log("relativeLocation", this.options.relativeLocation)
     if (this.options.relativeLocation) {
       return `${baseUrl}${path}/${id}`
     }
 
+    console.log("respectForwardedHeaders", this.options.respectForwardedHeaders)
     if (this.options.respectForwardedHeaders) {
       if (forwarded) {
         host ??= reForwardedHost.exec(forwarded)?.[1]
@@ -65,7 +69,7 @@ export class BaseHandler extends EventEmitter {
     }
 
     host ??= req.headers.host
-    proto = 'https'
+    proto = 'http'
     console.log("final_proto", proto)
     return `${proto}://${host}${baseUrl}${path}/${id}`
   }
