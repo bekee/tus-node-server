@@ -39,6 +39,7 @@ export class BaseHandler extends EventEmitter {
     let proto
     let host
 
+    console.log("base_url_1", baseUrl)
     if (this.options.relativeLocation) {
       return `${baseUrl}${path}/${id}`
     }
@@ -52,17 +53,20 @@ export class BaseHandler extends EventEmitter {
       const forwardHost = req.headers['x-forwarded-host']
       const forwardProto = req.headers['x-forwarded-proto']
 
+      console.log("forwardHost", forwardHost)
+      console.log("forwardProto", forwardProto)
+
       // @ts-expect-error we can pass undefined
       if (['http', 'https'].includes(forwardProto)) {
         proto ??= forwardProto as string
       }
-
+      console.log("proto", proto)
       host ??= forwardHost
     }
 
     host ??= req.headers.host
-    proto ??= 'http'
-
+    proto = 'https'
+    console.log("final_proto", proto)
     return `${proto}://${host}${baseUrl}${path}/${id}`
   }
 
