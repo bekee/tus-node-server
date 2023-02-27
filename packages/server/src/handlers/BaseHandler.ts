@@ -69,7 +69,7 @@ export class BaseHandler extends EventEmitter {
     }
 
     host ??= req.headers.host
-    proto = 'http'
+    proto ??= 'http'
     console.log("final_proto", proto)
     return `${proto}://${host}${baseUrl}${path}/${id}`
   }
