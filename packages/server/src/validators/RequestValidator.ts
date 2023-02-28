@@ -40,7 +40,6 @@ export const RequestValidator = {
   },
 
   _invalidXForwardedProtoHeader(value: string) {
-    console.log('x-forwarded-proto', value)
     return !['http', 'https'].includes(value)
   },
 
@@ -90,13 +89,8 @@ export const RequestValidator = {
 
   isInvalidHeader(header_name: string, header_value: string | undefined): boolean {
 
-    // 
-    // console.log("method", method)
-    console.log("header_name", header_name)
-
     // @ts-expect-error we can compare string literals
     if (!HEADERS_LOWERCASE.includes(header_name)) {
-      console.log("header_not_found", header_name)
       return false
     }
     console.log("heade_found", header_name)

@@ -39,15 +39,15 @@ export class BaseHandler extends EventEmitter {
     let proto
     let host
 
-    console.log("full_header", req.headers) 
-    console.log("forwardedppp", forwarded) 
-    console.log("base_url_1", baseUrl)
-    console.log("relativeLocation", this.options.relativeLocation)
+    // console.log("full_header", req.headers) 
+    // console.log("forwardedppp", forwarded) 
+    // console.log("base_url_1", baseUrl)
+    // console.log("relativeLocation", this.options.relativeLocation)
     if (this.options.relativeLocation) {
       return `${baseUrl}${path}/${id}`
     }
 
-    console.log("respectForwardedHeaders", this.options.respectForwardedHeaders)
+    // console.log("respectForwardedHeaders", this.options.respectForwardedHeaders)
     if (this.options.respectForwardedHeaders) {
       if (forwarded) {
         host ??= reForwardedHost.exec(forwarded)?.[1]
@@ -57,20 +57,20 @@ export class BaseHandler extends EventEmitter {
       const forwardHost = req.headers['x-forwarded-host']
       const forwardProto = req.headers['x-forwarded-proto']
 
-      console.log("forwardHost", forwardHost)
-      console.log("forwardProto", forwardProto)
+      // console.log("forwardHost", forwardHost)
+      // console.log("forwardProto", forwardProto)
 
       // @ts-expect-error we can pass undefined
       if (['http', 'https'].includes(forwardProto)) {
         proto ??= forwardProto as string
       }
-      console.log("proto", proto)
+      // console.log("proto", proto)
       host ??= forwardHost
     }
 
     host ??= req.headers.host
     proto ??= 'http'
-    console.log("final_proto", proto)
+    // console.log("final_proto", proto)
     return `${proto}://${host}${baseUrl}${path}/${id}`
   }
 
